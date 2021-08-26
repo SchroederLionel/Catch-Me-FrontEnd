@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Catch me</title>
+  <link rel="stylesheet" href="/dist/css/main.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <img class="trierlogo" src="src/icons/uni_trier.svg">
+ 
+  <div class="content">
+    <div class="row no-gutters">
+      <div class="col">
+        <div class="leftSide">
+
+          <div class="circle_base circleLeft"></div>
+          <div class="glasBox glasBox_left" id="glassLeft">
+            <img class="close" id="closeLeft" src="src/icons/close.svg" alt="close" onclick="closeLeftBubble()">
+            <h2 id="leftTitle" class="seq">Hello,</h2>
+            <p id="leftText" class="seq">Go ahead and drop your SGF file.</p>
+          </div>
+          <div class="maincontainer">
+            <div class="thecard" id="card">
+              <div class="drag-area thefront" id="drag_area">
+                <img class="icon" src="src/icons/cloud.svg" alt="cloud">
+                <header>Drag & Drop to Upload File</header>
+              </div>
+              <div class="theback">
+                <img onclick="backToDragAndDrop()"class="close arrow_back" src="src/icons/arrow_back.svg" alt="cloud">
+                <h4 id="title">Cheat Detection</h4>
+                <div class="gameSummary">
+                  <h4 class="subtitle">Summary</h4>
+                  <div class="text" id="totalMovesPlayed">Total moves played: 58</div>
+                  <table>
+                    <tr>
+                      <td><div class="winner" id="winner">Winner: White</div></td>
+                      <td><div class="komi" id="komi">Komi: </div></td></tr>
+                      <tr>
+                        <td><div class="text" id="whitePlayerName">White</div></td>
+                        <td><div class="text" id="blackPlayerName"> Black</div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="text" id="whitePlayerName">Moves played by white</div></td>
+                        <td><div class="text" id="blackPlayerName">Moves played by black</div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="percentage-num"  id="whiteMovesPlayedNumber">86%</div>
+                          <div class="progressBar">
+                            <div class="percentagem" id="whiteBarPlayedMoves" style="width:86%;"></div>
+                          </div></td>
+                        <td>
+                          <div class="percentage-num" id="blackMovesPlayedNumber">33%</div>
+                          <div class="progressBar">
+                            <div class="percentagem" id="blackBarPlayedMoves" style="width:33%;"></div>
+                          </div></div></td>
+                      </tr>
+                  </table>
+                </div>
+                <div class="cheater">
+                  <h4 class="subtitle">Chance of cheating</h4>
+                  <table>
+                    <tr>
+                      <td><div class="text" id="winner">White</div></td>
+                      <td><div class="text" id="komi">Black</div></td></tr>
+                    </tr>
+                    <tr>
+                     
+                      <td><div class="percentage-num"  id="whiteNumber">86%</div>
+                        <div class="progressBar">
+                          <div class="percentagem" id="whiteBar" style="width:86%;"></div>
+                        </div></div>
+                      
+                      </td>
+                      <td><div class="percentage-num" id="blackNumber">33%</div>
+                        <div class="progressBar">
+                          <div class="percentagem" id="blackBar" style="width:33%;"></div>
+                        </div></div></td>
+                    </tr>
+                     
+                  </table>
+             
+                </div>
+                <div class="graphGeneration">
+                  <h4 class="subtitle">Graph creation</h4>
+                  <table>
+                    <tr>
+                      <td><div class="text">Winning rate</div></td>
+                      <td><div class="text">Utility</div></td>
+                      <td><div class="text">Scorelead</div></td>
+                    </tr>
+                    <tr>
+                      <td><div onclick="winningRateGraph()" class="chevron_box icon_left_shadow">
+                        <img  class="chevron" src="src/icons/leaderboard_black.svg">
+                      </div></td>
+                     <td> <div onclick="utilityGraph()" class="chevron_box icon_right_shadow">
+                        <img  class="chevron" src="src/icons/utility.svg">
+                      </div></td>
+                    
+                    <td> <div onclick="utilityGraph()" class="chevron_box icon_right_shadow">
+                      <img  class="chevron" src="src/icons/trending.svg">
+                    </div></td>
+                  </tr>
+                  </table>
+              
+                </div>
+
+                <div class="play">
+                  <div onclick="backwards()" class="chevron_box icon_left_shadow ">
+                    <img  class="chevron" src="src/icons/chevron_left.svg">
+                  </div>
+                  <div onclick="forwards()" class="chevron_box icon_right_shadow">
+                    <img class="chevron" src="src/icons/chevron_right.svg">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <button id="analyseButton" onclick="analyse()" class="custom-btn btn-3"><span>Analyse</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+
+
+
+
+
+        <div class="rightSide">
+          
+          <div class="circle_base circleRight"></div>
+          <div class="glasBox glasBox_Right" id="glassRight">
+            <img class="close" id="closeRight" src="src/icons/close.svg" alt="close" onclick="closeRightBubble()">
+            <h2 class="seq">Or,</h2>
+            <p class="seq">Get move suggestions live.</p>
+          </div>
+
+          <div class="mainRightContainer">
+            <div class="thecard " id="cardRight">
+              <div class="thefront">
+                   <div class="division" id="gridArea">
+                   
+                     <div id="areaPlace1" class="boardPlacementAssistanceStone placement" style="grid-area: 4/4;"></div>
+                     <div id="areaPlace2" class="boardPlacementAssistanceStone placement" style="grid-area: 10/4;"></div>
+                     <div id="areaPlace3" class="boardPlacementAssistanceStone placement" style="grid-area: 16/4;"></div>
+
+                     <div class="boardPlacementAssistanceStone placement" style="grid-area: 4/10;"></div>
+                     <div class="boardPlacementAssistanceStone placement" style="grid-area: 10/10;"></div>
+                     <div class="boardPlacementAssistanceStone placement" style="grid-area: 16/10;"></div>
+
+                     <div class="boardPlacementAssistanceStone placement" style="grid-area: 4/16;"></div>
+                     <div class="boardPlacementAssistanceStone placement" style="grid-area: 10/16;"></div>
+                     <div class="boardPlacementAssistanceStone placement" style="grid-area: 16/16;"></div>
+
+                     <div class="board" id="boardArea"></div>
+                     <div class="tables" id="table"></div>
+                   </div>
+               </div>
+               <div class="theback" id="rightBackContent">
+                <img onclick="backToBoard()"class="close arrow_back" src="src/icons/arrow_back.svg" alt="cloud">
+                 <h4 id="title">Graph</h4>
+                <div id="graphContainer" class="graphContainer">
+                  <canvas id="graph"></canvas>
+                </div>
+               </div>
+           </div>
+         </div>
+          </div>
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+      integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+      crossorigin="anonymous"></script>
+    <script>
+      const glass = document.getElementById('glass');
+      const t1 = gsap.timeline({
+        defaults: { ease: 'power2.inOut', duration: 1.5 },
+      });
+
+      t1.from('.glasBox', { opacity: 0, delay: 0.5, duration: 1 }, '-=1.5')
+        .from('.glasBox', { x: '-20%', backdropFilter: 'blur(0px)' })
+        .from(
+          '.seq',
+          { y: -30, opacity: 0, stagger: 0.2, duration: 0.5 },
+          '-=.5'
+        ).from('.close', { y: -30, opacity: 0, stagger: 0.2, duration: 1 }, '-=1.5')
+        .from('h1', { y: 20, clipPath: 'inset(0 0 100% 0)' }, '-=.8');
+      const closeLeft = document.getElementById('closeLeft');
+      const closeRight = document.getElementById('closeRight');
+      var t2 = new TimelineLite({ delay: 1.6 });
+      t2.staggerTo(closeLeft, 1, { opacity: 1 }, 0.2).staggerTo(closeRight, 1, { opacity: 1 }, 0.2);
+
+      window.addEventListener("load", () => {
+
+      });
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.0/chart.min.js" integrity="sha512-yadYcDSJyQExcKhjKSQOkBKy2BLDoW6WnnGXCAkCoRlpHGpYuVuBqGObf3g/TdB86sSbss1AOP4YlGSb6EKQPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script/main.js"></script>
+</body>
+
+</html>

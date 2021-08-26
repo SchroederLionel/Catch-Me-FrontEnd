@@ -1,0 +1,608 @@
+body {
+  color: white;
+  font-family: 'Poppins';
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trierlogo {
+  background: #3d518c;
+  border-radius: 1000px;
+  position: absolute;
+  left: 49.9%;
+  top: 13%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  height: 200px;
+}
+table {
+  width: 100%;
+}
+
+/**
+* Game summary.
+*/
+/* Split the screen in half */
+.gameSummary {
+  margin-left: 30px;
+  position: relative;
+
+  margin-bottom: 10px;
+}
+.graphGeneration {
+  margin-left: 30px;
+  position: relative;
+
+  margin-bottom: 10px;
+}
+.cheater {
+  margin-left: 30px;
+  position: relative;
+}
+.subtitle {
+  width: 100%;
+
+  font-size: 20px;
+  margin-top: 25px;
+}
+.split {
+  height: 130px;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* Control the left side */
+.left {
+  margin-top: 30px;
+}
+
+/* Control the right side */
+.right {
+  position: absolute;
+  right: 0;
+}
+
+/* If you want the content centered horizontally and vertically */
+.margins {
+  margin-right: 30px;
+  height: 100%;
+}
+
+#title {
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+
+  text-align: center;
+  font-size: 1.7em;
+  color: #3d518c;
+}
+.maincontainer {
+  margin-top: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 630px;
+  height: 630px;
+}
+.mainRightContainer {
+  height: 685;
+  width: 100%;
+}
+#cardRight {
+  position: relative;
+  margin-top: 215px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 685px;
+  width: 685px;
+}
+
+.drag-area {
+  border: 2px dashed #ffffff;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.thecard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.thecard.active {
+  transform: rotateY(180deg);
+}
+
+.close {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  z-index: 10 !important;
+}
+
+.icon {
+  height: 75px;
+  width: 75px;
+  margin-bottom: 10px;
+}
+
+.arrow_back {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #000;
+  opacity: 1 !important;
+}
+.button {
+  position: absolute;
+  height: 50px;
+  bottom: 100px;
+  left: 50%;
+  -ms-transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);
+}
+.custom-btn {
+  width: 150px;
+  height: 50px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  align-items: center;
+
+  border: none;
+  outline: none;
+}
+
+/* 3 */
+.btn-3 {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(0.5px);
+  border: solid 2px transparent;
+  background-clip: padding-box;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-3 span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 0;
+  background: #7692ff;
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover {
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:hover {
+  color: white;
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  background: #7692ff;
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+}
+.content {
+  height: 100%;
+  width: 100%;
+}
+.leftSide,
+.rightSide {
+  height: 100vh;
+  width: 100%;
+}
+
+.leftSide {
+  background: #3d518c;
+}
+.rightSide {
+  position: absolute;
+  top: 0;
+  background: #7692ff;
+}
+.circle_base {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.text {
+  color: #000;
+  font-size: 16px;
+}
+
+.detectionArea {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+.detectionAreaContent {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+li {
+  width: 45.82%;
+  float: left;
+}
+.margin {
+  margin-right: 50px;
+}
+
+.percentage-num {
+  float: right;
+  font-size: 14px;
+  font-weight: normal;
+  margin-right: 30px;
+}
+
+.progressBar {
+  position: relative;
+  width: 90%;
+  height: 7px;
+  margin: 25px 0 2px;
+  border-radius: 10px;
+  box-shadow: -5px 5px 9px #b3b3b3, 5px -5px 9px #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+}
+.percentagem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 7px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #7692ff;
+  transition: 3s all;
+  animation-name: animationProgress;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes animationProgress {
+  from {
+    width: 0;
+  }
+}
+
+.icon_left_shadow {
+  box-shadow: -5px 5px 9px #b3b3b3, 5px -5px 9px #ffffff;
+}
+.icon_right_shadow {
+  box-shadow: 5px 5px 9px #b3b3b3, -5px -5px 9px #ffffff;
+}
+
+.play {
+  width: 145px;
+  height: 60px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -ms-transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);
+}
+
+.chevron_box {
+  margin: 10px 10px 5px 0px;
+  display: inline-block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.chevron {
+  margin-top: 2.5px;
+  width: 45px;
+  height: 45px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circleLeft {
+  top: 20px;
+  left: 50px;
+  background: #0d1b2a;
+  z-index: 1;
+}
+.circleRight {
+  top: 20px;
+  right: 50px;
+  background: #0d1b2a;
+  z-index: 1;
+}
+.field {
+  position: relative;
+  background: white;
+  height: 400px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.glasBox {
+  width: 350px;
+  display: inline-block;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.192);
+  padding: 10px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 100000;
+  backdrop-filter: blur(40px);
+  border: solid 2px transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.027);
+  margin-bottom: 20px;
+  color: white;
+}
+
+.glasBox_left {
+  margin-top: 65px;
+  margin-left: 85px;
+  padding-left: 20px;
+}
+
+.glasBox_Right {
+  margin-top: 65px;
+  margin-right: 85px;
+  padding-left: 20px;
+  position: absolute;
+  right: 0;
+}
+
+h2 {
+  font-size: 1.7em;
+  color: #ffffff;
+  margin: 0;
+}
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+h1 {
+  font-size: 4em;
+}
+
+.tables {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 9.75px;
+  padding-top: 9.75px;
+  width: 685px;
+  height: 685px;
+  cursor: pointer;
+  /*background: rgba(255, 255, 255, 0.178);*/
+
+  border-radius: 20px;
+
+  border: solid 2px white;
+  background-clip: padding-box;
+}
+.board {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  width: 630px;
+  height: 630px;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  background-size: calc(628px / 18) calc(628px / 18);
+  background-image: linear-gradient(to right, white 2px, transparent 1px),
+    linear-gradient(to bottom, white 2px, transparent 1px);
+}
+.division {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 4;
+  width: 665px;
+  height: 665px;
+
+  display: grid;
+
+  grid-template-columns: repeat(19, calc(665px / 19));
+  grid-template-rows: repeat(19, calc(665px / 19));
+}
+
+.stone {
+  text-align: center;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: 25px;
+  width: 25px;
+  z-index: 3;
+}
+
+.boardPlacementAssistanceStone {
+  border-radius: 50%;
+  margin-left: 11px;
+  margin-top: 11px;
+  height: 13px;
+  width: 13px;
+  z-index: 1;
+}
+.black {
+  font-size: 14px;
+  color: white;
+  background: black;
+}
+.white {
+  font-size: 14px;
+  color: black;
+  background: white;
+}
+
+.custom {
+  background: #7692ff;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+.drag-area.active {
+  border: 2px solid #adefd1ff;
+}
+.drag-area .icon {
+  font-size: 100px;
+  color: #fff;
+}
+
+.drag-area header {
+  font-size: 30x;
+  color: #fff;
+}
+
+.drag-area span {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 500;
+  margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border-style: none;
+  color: #415a77;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cardRight.active {
+  transform: rotateY(180deg);
+}
+
+.thefront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  color: #333;
+}
+
+.theback {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+  z-index: 100;
+  cursor: default !important;
+}
+.placement {
+  background: #3d518c;
+  z-index: 1;
+}
+
+/**
+ Graph
+*/
+#graph {
+  width: 90%;
+  height: 90% !important;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.graphContainer {
+  position: relative;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+}
+
+table {
+  font-size: 18px;
+}
